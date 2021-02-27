@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 4rem;
+  font-family: "Inconsolata", monospace;
+  font-weight: 300;
+}
+
+button {
+  border-style: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  background-color: #1b191c;
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  gap: 1px;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1.5fr (1fr)[5];
+      grid-template-rows: 1.5fr repeat(5, 1fr);
+      grid-template-areas: "display display display display" "ac plus-minus percent division" "seven eight nine multiplication" "four five six minus" "one two three plus" "zero zero dot equal";
+}
+
+main #display {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: display;
+  text-align: right;
+  color: white;
+}
+
+main #ac {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: ac;
+}
+
+main #plus-minus {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: plus-minus;
+}
+
+main #percent {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: percent;
+}
+
+main #division {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: division;
+}
+
+main #seven {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: seven;
+}
+
+main #eight {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: eight;
+}
+
+main #nine {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+
+main #multiplication {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: multiplication;
+}
+
+main #four {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: four;
+}
+
+main #five {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: five;
+}
+
+main #six {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+main #minus {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: minus;
+}
+
+main #one {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+main #two {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+main #three {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+main #plus {
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
+  grid-area: plus;
+}
+
+main #zero {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: zero;
+}
+
+main #dot {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  grid-area: dot;
+}
+
+main #equal {
+  -ms-grid-row: 6;
+  -ms-grid-column: 4;
+  grid-area: equal;
+}
+/*# sourceMappingURL=style.css.map */
