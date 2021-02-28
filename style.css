@@ -9,13 +9,14 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  font-size: 4rem;
+main {
   font-family: "Inconsolata", monospace;
-  font-weight: 300;
 }
 
 button {
+  font-size: 5vh;
+  font-weight: 200;
+  color: #444a66;
   border-style: none;
   padding: 2rem;
   text-align: center;
@@ -35,12 +36,24 @@ main {
 }
 
 main #display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  color: white;
+  font-size: 10rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 4rem;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: display;
-  text-align: right;
-  color: white;
 }
 
 main #ac {
@@ -150,11 +163,25 @@ main #dot {
   -ms-grid-row: 6;
   -ms-grid-column: 3;
   grid-area: dot;
+  font-weight: 600;
 }
 
 main #equal {
   -ms-grid-row: 6;
   -ms-grid-column: 4;
   grid-area: equal;
+}
+
+main .dark-gray {
+  background-color: #c9c8cd;
+}
+
+main .gray {
+  background-color: #e0e1e6;
+}
+
+main .purple {
+  background-color: #5d4980;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

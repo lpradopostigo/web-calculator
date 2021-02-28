@@ -7,22 +7,28 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  font-size: 4rem;
+main {
   font-family: "Inconsolata", monospace;
-  font-weight: 300;
 }
 
 button {
+  font-size: 5vh;
+  font-weight: 200;
+  color: #444a66;
   border-style: none;
   padding: 2rem;
   text-align: center;
 }
 main {
   #display {
-    grid-area: display;
+    display: flex;
+    flex-direction: column;
     text-align: right;
     color: white;
+    font-size: 10rem;
+    justify-content: center;
+    margin-right: 4rem;
+    grid-area: display;
   }
   #ac {
     grid-area: ac;
@@ -77,9 +83,23 @@ main {
   }
   #dot {
     grid-area: dot;
+    font-weight: 600;
   }
   #equal {
     grid-area: equal;
+  }
+
+  .dark-gray {
+    background-color: #c9c8cd;
+  }
+
+  .gray {
+    background-color: #e0e1e6;
+  }
+
+  .purple {
+    background-color: #5d4980;
+    color: white;
   }
   background-color: #1b191c;
   display: grid;
