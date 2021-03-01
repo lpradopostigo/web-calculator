@@ -1,3 +1,4 @@
+// TODO percent
 const addition = (a, b) => a + b;
 const multiplication = (a, b) => a * b;
 const division = (a, b) => a / b;
@@ -14,7 +15,7 @@ function operate() {
 }
 
 function numberAction(numberButton) {
-  if (waitingFlag || display.innerText[0] === '0') {
+  if (waitingFlag || (display.innerText[0] === '0' && display.innerText.length === 1)) {
     display.innerText = '';
     waitingFlag = false;
   }
@@ -46,17 +47,25 @@ for (let i = 0; i < numberButtons.length; i += 1) {
 document.getElementById('ac').onclick = function () {
   display.innerText = '0';
   queue = [];
+  waitingFlag = true;
+  lockFlag = false;
 };
 
+document.getElementById('sign').onclick = () => {
+  display.innerText = String(-1 * Number(display.innerText));
+};
 document.getElementById('dot').onclick = function () {
-
+  if (!display.innerText.includes('.')) {
+    display.innerText += '.';
+    waitingFlag = false;
+  }
 };
 
-document.getElementById('plus').onclick = () => {
+document.getElementById('addition').onclick = () => {
   operatorAction(addition);
 };
 
-document.getElementById('minus').onclick = () => {
+document.getElementById('subtraction').onclick = () => {
   operatorAction(substraction);
 };
 
@@ -68,15 +77,16 @@ document.getElementById('division').onclick = () => {
   operatorAction(division);
 };
 
+// FIXME
 document.getElementById('equal').onclick = function () {
+  if (queue.length === 0) {
+    display.innerText = '0';
+  } else {
+    queue.push(Number(display.innerText));
+    operate();
+    queue.pop();
 
-  // if (queue.length === 0) {
-  //   display.innerText = '0'
-  // } else {
-  //   queue.push(Number(display.innerText))
-  //   operate()
-  //   queue.pop()
-
-  //   display.innerText = queue[0]
-  // }
+    [display.innerText] = queue;
+    waitingFlag = true;
+  }
 };

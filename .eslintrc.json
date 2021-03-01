@@ -11,6 +11,8 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-unused-vars": "warn"
+        "no-trailing-spaces": "warn",
+        "no-empty": "warn",
+        "no-multiple-empty-lines": "warn"
     }
 }

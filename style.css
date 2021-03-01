@@ -14,8 +14,8 @@ main {
 }
 
 button {
-  font-size: 5vh;
-  font-weight: 200;
+  font-size: 4rem;
+  font-weight: 300;
   color: #444a66;
   border-style: none;
   padding: 2rem;
@@ -27,6 +27,7 @@ main {
   display: -ms-grid;
   display: grid;
   height: 100vh;
+  width: 100%;
   gap: 1px;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
@@ -45,15 +46,17 @@ main #display {
           flex-direction: column;
   text-align: right;
   color: white;
-  font-size: 10rem;
+  font-size: 6rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-right: 4rem;
+  margin-right: 3rem;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: display;
+  overflow: scroll;
+  word-wrap: break-word;
 }
 
 main #ac {
@@ -62,13 +65,13 @@ main #ac {
   grid-area: ac;
 }
 
-main #plus-minus {
+main #sign {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: plus-minus;
 }
 
-main #percent {
+main #percentage {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: percent;
@@ -122,7 +125,7 @@ main #six {
   grid-area: six;
 }
 
-main #minus {
+main #subtraction {
   -ms-grid-row: 4;
   -ms-grid-column: 4;
   grid-area: minus;
@@ -146,7 +149,7 @@ main #three {
   grid-area: three;
 }
 
-main #plus {
+main #addition {
   -ms-grid-row: 5;
   -ms-grid-column: 4;
   grid-area: plus;
