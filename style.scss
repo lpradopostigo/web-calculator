@@ -32,7 +32,6 @@ main {
     grid-area: display;
     overflow: scroll;
     word-wrap: break-word;
-
   }
   #ac {
     grid-area: ac;
@@ -41,7 +40,7 @@ main {
     grid-area: plus-minus;
   }
   #percentage {
-    grid-area: percent;
+    grid-area: percentage;
   }
   #division {
     grid-area: division;
@@ -114,7 +113,7 @@ main {
   grid-template-rows: 1.5fr repeat(5, 1fr);
   grid-template-areas:
     "display display display display"
-    "ac plus-minus percent division"
+    "ac plus-minus percentage division"
     "seven eight nine multiplication"
     "four five six minus"
     "one two three plus"

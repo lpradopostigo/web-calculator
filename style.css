@@ -33,7 +33,7 @@ main {
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: 1.5fr (1fr)[5];
       grid-template-rows: 1.5fr repeat(5, 1fr);
-      grid-template-areas: "display display display display" "ac plus-minus percent division" "seven eight nine multiplication" "four five six minus" "one two three plus" "zero zero dot equal";
+      grid-template-areas: "display display display display" "ac plus-minus percentage division" "seven eight nine multiplication" "four five six minus" "one two three plus" "zero zero dot equal";
 }
 
 main #display {
@@ -74,7 +74,7 @@ main #sign {
 main #percentage {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
-  grid-area: percent;
+  grid-area: percentage;
 }
 
 main #division {

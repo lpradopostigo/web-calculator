@@ -1,23 +1,70 @@
-// TODO percent
 const addition = (a, b) => a + b;
 const multiplication = (a, b) => a * b;
 const division = (a, b) => a / b;
 const substraction = (a, b) => a - b;
 
-const numberButtons = document.getElementsByClassName('number');
-const display = document.getElementById('display');
-let waitingFlag = true;
+const numberButtons = document.querySelectorAll('.number');
+const display = document.querySelector('#display');
+let replaceFlag = true;
 let lockFlag = false;
-let queue = [];
+
+const queue = {
+  data: [null, null, null],
+  length: 0,
+
+  look() {
+    return this.data[0];
+  },
+
+  dequeue() {
+    if (this.length !== 0) {
+      this.length -= 1;
+    }
+    this.data.push(null);
+    return this.data.shift();
+  },
+
+  enqueue(value) {
+    for (let i = 0; i < this.data.length; i += 1) {
+      if (this.data[i] === null) {
+        this.data[i] = value;
+        this.length += 1;
+        return true;
+      }
+    }
+    return false;
+  },
+  get isFull() {
+    return this.data[2] !== null;
+  },
+
+  get isEmpty() {
+    return this.data[0] === null;
+  },
+
+  clear() {
+    this.data = [null, null, null];
+    this.length = 0;
+  },
+
+};
 
 function operate() {
-  queue[0] = queue[1](queue[0], queue[2]);
+  if (queue.isFull) {
+    const a = queue.dequeue();
+    const operator = queue.dequeue();
+    const b = queue.dequeue();
+    queue.enqueue(operator(a, b));
+  }
 }
 
 function numberAction(numberButton) {
-  if (waitingFlag || (display.innerText[0] === '0' && display.innerText.length === 1)) {
+  if (
+    replaceFlag
+    || (display.innerText[0] === '0' && display.innerText.length === 1)
+  ) {
     display.innerText = '';
-    waitingFlag = false;
+    replaceFlag = false;
   }
   lockFlag = false;
 
@@ -25,39 +72,53 @@ function numberAction(numberButton) {
 }
 
 function operatorAction(operator) {
-  waitingFlag = true;
+  replaceFlag = true;
   if (queue.length < 2) {
-    queue.push(Number(display.innerText));
-    queue.push(operator);
+    queue.enqueue(Number(display.innerText));
+    queue.enqueue(operator);
   } else if (!lockFlag) {
-    queue.push(Number(display.innerText));
+    queue.enqueue(Number(display.innerText));
     operate();
-    queue.pop();
-    queue.pop();
-    queue.push(operator);
+    queue.enqueue(operator);
     lockFlag = true;
-    [display.innerText] = queue;
+    display.innerText = queue.look();
   }
 }
 
-for (let i = 0; i < numberButtons.length; i += 1) {
-  numberButtons[i].addEventListener('click', () => { numberAction(numberButtons[i]); });
-}
+numberButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    numberAction(button);
+  });
+});
 
 document.getElementById('ac').onclick = function () {
   display.innerText = '0';
-  queue = [];
-  waitingFlag = true;
+  queue.clear();
+  replaceFlag = true;
   lockFlag = false;
 };
 
 document.getElementById('sign').onclick = () => {
   display.innerText = String(-1 * Number(display.innerText));
 };
+
+// document.getElementById('percentage').onclick = () => {
+//   if (queue.length === 0) {
+//     display.innerText = '0';
+//   } else if (queue.length === 2 && queue[1] === multiplication) {
+//     queue.push(Number(display.innerText));
+//     operate();
+//     queue.pop();
+//     queue.pop();
+//     queue[0] /= 100;
+//     [display.innerText] = queue;
+//   }
+// };
+
 document.getElementById('dot').onclick = function () {
   if (!display.innerText.includes('.')) {
     display.innerText += '.';
-    waitingFlag = false;
+    replaceFlag = false;
   }
 };
 
@@ -77,16 +138,15 @@ document.getElementById('division').onclick = () => {
   operatorAction(division);
 };
 
-// FIXME
-document.getElementById('equal').onclick = function () {
-  if (queue.length === 0) {
-    display.innerText = '0';
-  } else {
-    queue.push(Number(display.innerText));
-    operate();
-    queue.pop();
+// document.getElementById('equal').onclick = function () {
+//   if (queue.length === 0) {
+//     display.innerText = '0';
+//   } else {
+//     queue.push(Number(display.innerText));
+//     operate();
+//     queue.pop();
 
-    [display.innerText] = queue;
-    waitingFlag = true;
-  }
-};
+//     [display.innerText] = queue;
+//     replaceFlag = true;
+//   }
+// };
