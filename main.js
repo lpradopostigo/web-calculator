@@ -81,7 +81,7 @@ function operatorAction(operator) {
     operate();
     queue.enqueue(operator);
     lockFlag = true;
-    display.innerText = queue.look();
+    display.innerText = String(queue.look());
   }
 }
 
@@ -91,62 +91,59 @@ numberButtons.forEach((button) => {
   });
 });
 
-document.getElementById('ac').onclick = function () {
+document.querySelector('#ac').onclick = function () {
   display.innerText = '0';
   queue.clear();
   replaceFlag = true;
   lockFlag = false;
 };
 
-document.getElementById('sign').onclick = () => {
+document.querySelector('#sign').onclick = () => {
   display.innerText = String(-1 * Number(display.innerText));
 };
 
-// document.getElementById('percentage').onclick = () => {
-//   if (queue.length === 0) {
-//     display.innerText = '0';
-//   } else if (queue.length === 2 && queue[1] === multiplication) {
-//     queue.push(Number(display.innerText));
-//     operate();
-//     queue.pop();
-//     queue.pop();
-//     queue[0] /= 100;
-//     [display.innerText] = queue;
-//   }
-// };
-
-document.getElementById('dot').onclick = function () {
-  if (!display.innerText.includes('.')) {
-    display.innerText += '.';
-    replaceFlag = false;
+document.querySelector('#percentage').onclick = () => {
+  if (queue.length === 2 && queue.data[1] === multiplication) {
+    queue.enqueue(Number(display.innerText));
+    operate();
+    const tmp = queue.dequeue() / 100;
+    queue.enqueue(tmp);
+    display.innerText = String(queue.look());
   }
 };
 
-document.getElementById('addition').onclick = () => {
+document.querySelector('#dot').onclick = function () {
+  if (!display.innerText.includes('.')) {
+    display.innerText += '.';
+  } else if (replaceFlag) {
+    display.innerText = '0.';
+  }
+  replaceFlag = false;
+};
+
+document.querySelector('#addition').onclick = () => {
   operatorAction(addition);
 };
 
-document.getElementById('subtraction').onclick = () => {
+document.querySelector('#subtraction').onclick = () => {
   operatorAction(substraction);
 };
 
-document.getElementById('multiplication').onclick = () => {
+document.querySelector('#multiplication').onclick = () => {
   operatorAction(multiplication);
 };
 
-document.getElementById('division').onclick = () => {
+document.querySelector('#division').onclick = () => {
   operatorAction(division);
 };
 
-// document.getElementById('equal').onclick = function () {
-//   if (queue.length === 0) {
-//     display.innerText = '0';
-//   } else {
-//     queue.push(Number(display.innerText));
-//     operate();
-//     queue.pop();
+// fix
+document.querySelector('#equal').onclick = function () {
+  if (queue.length !== 0) {
+    queue.enqueue(Number(display.innerText));
+    operate();
 
-//     [display.innerText] = queue;
-//     replaceFlag = true;
-//   }
-// };
+    display.innerText = String(queue.look());
+    replaceFlag = true;
+  }
+};
