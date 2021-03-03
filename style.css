@@ -16,14 +16,14 @@ main {
 button {
   font-size: 4rem;
   font-weight: 300;
-  color: #444a66;
+  color: #323540;
   border-style: none;
   padding: 2rem;
   text-align: center;
 }
 
 main {
-  background-color: #1b191c;
+  background-color: #2e2b33;
   display: -ms-grid;
   display: grid;
   height: 100vh;
@@ -55,7 +55,7 @@ main #display {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: display;
-  overflow: scroll;
+  overflow: hidden;
   word-wrap: break-word;
 }
 
@@ -176,15 +176,17 @@ main #equal {
 }
 
 main .dark-gray {
-  background-color: #c9c8cd;
+  background-color: #6fb0d9;
+  color: #323540;
 }
 
 main .gray {
-  background-color: #e0e1e6;
+  background-color: #805555;
+  color: white;
 }
 
 main .purple {
-  background-color: #5d4980;
-  color: white;
+  background-color: #72ccbe;
+  color: #323540;
 }
 /*# sourceMappingURL=style.css.map */
