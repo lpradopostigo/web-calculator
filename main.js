@@ -73,8 +73,10 @@ function numberAction(numberButton) {
 
 function operatorAction(operator) {
   replaceFlag = true;
-  if (queue.length < 2) {
+  if (queue.length === 0) {
     queue.enqueue(Number(display.innerText));
+    queue.enqueue(operator);
+  } else if (queue.length === 1) {
     queue.enqueue(operator);
   } else if (!lockFlag) {
     queue.enqueue(Number(display.innerText));
@@ -91,7 +93,7 @@ numberButtons.forEach((button) => {
   });
 });
 
-document.querySelector('#ac').onclick = function () {
+document.querySelector('#ac').onclick = () => {
   display.innerText = '0';
   queue.clear();
   replaceFlag = true;
@@ -102,6 +104,7 @@ document.querySelector('#sign').onclick = () => {
   display.innerText = String(-1 * Number(display.innerText));
 };
 
+// TODO understand classic functionality on add and subs operations
 document.querySelector('#percentage').onclick = () => {
   if (queue.length === 2 && queue.data[1] === multiplication) {
     queue.enqueue(Number(display.innerText));
@@ -112,7 +115,7 @@ document.querySelector('#percentage').onclick = () => {
   }
 };
 
-document.querySelector('#dot').onclick = function () {
+document.querySelector('#dot').onclick = () => {
   if (!display.innerText.includes('.')) {
     display.innerText += '.';
   } else if (replaceFlag) {
@@ -137,8 +140,8 @@ document.querySelector('#division').onclick = () => {
   operatorAction(division);
 };
 
-// fix
-document.querySelector('#equal').onclick = function () {
+// FIXME
+document.querySelector('#equal').onclick = () => {
   if (queue.length !== 0) {
     queue.enqueue(Number(display.innerText));
     operate();
