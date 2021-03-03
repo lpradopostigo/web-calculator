@@ -140,9 +140,9 @@ document.querySelector('#division').onclick = () => {
   operatorAction(division);
 };
 
-// FIXME
+// TODO add remaining functionality
 document.querySelector('#equal').onclick = () => {
-  if (queue.length !== 0) {
+  if (queue.length === 2) {
     queue.enqueue(Number(display.innerText));
     operate();
 
