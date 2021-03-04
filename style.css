@@ -1,3 +1,118 @@
+#ac {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: ac;
+}
+
+#sign {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: plus-minus;
+}
+
+#percentage {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: percentage;
+}
+
+#division {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: division;
+}
+
+#seven {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: seven;
+}
+
+#eight {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: eight;
+}
+
+#nine {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+
+#multiplication {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: multiplication;
+}
+
+#four {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: four;
+}
+
+#five {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: five;
+}
+
+#six {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+#subtraction {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: minus;
+}
+
+#one {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+#two {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+#three {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+#addition {
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
+  grid-area: plus;
+}
+
+#zero {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: zero;
+}
+
+#dot {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  grid-area: dot;
+}
+
+#equal {
+  -ms-grid-row: 6;
+  -ms-grid-column: 4;
+  grid-area: equal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,26 +124,27 @@ html {
   font-size: 62.5%;
 }
 
-main {
-  font-family: "Inconsolata", monospace;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 button {
-  font-size: 4rem;
-  font-weight: 300;
-  color: #323540;
-  border-style: none;
+  font-size: 4.8rem;
+  border-style: solid;
+  border-color: #f5f5f5;
   padding: 2rem;
   text-align: center;
+  border-radius: 20px;
+  font-weight: 100;
+  -webkit-box-shadow: 0px 2px 4px rgba(33, 33, 33, 0.25);
+          box-shadow: 0px 2px 4px rgba(33, 33, 33, 0.25);
 }
 
 main {
-  background-color: #2e2b33;
   display: -ms-grid;
   display: grid;
   height: 100vh;
-  width: 100%;
-  gap: 1px;
+  gap: 10px;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: 1.5fr (1fr)[5];
@@ -36,7 +152,8 @@ main {
       grid-template-areas: "display display display display" "ac plus-minus percentage division" "seven eight nine multiplication" "four five six minus" "one two three plus" "zero zero dot equal";
 }
 
-main #display {
+main header {
+  background-color: #212121;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,134 +176,12 @@ main #display {
   word-wrap: break-word;
 }
 
-main #ac {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: ac;
+main .action {
+  background-color: #3d5afe;
+  color: #fafafa;
 }
 
-main #sign {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: plus-minus;
-}
-
-main #percentage {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: percentage;
-}
-
-main #division {
-  -ms-grid-row: 2;
-  -ms-grid-column: 4;
-  grid-area: division;
-}
-
-main #seven {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: seven;
-}
-
-main #eight {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: eight;
-}
-
-main #nine {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  grid-area: nine;
-}
-
-main #multiplication {
-  -ms-grid-row: 3;
-  -ms-grid-column: 4;
-  grid-area: multiplication;
-}
-
-main #four {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: four;
-}
-
-main #five {
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
-  grid-area: five;
-}
-
-main #six {
-  -ms-grid-row: 4;
-  -ms-grid-column: 3;
-  grid-area: six;
-}
-
-main #subtraction {
-  -ms-grid-row: 4;
-  -ms-grid-column: 4;
-  grid-area: minus;
-}
-
-main #one {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  grid-area: one;
-}
-
-main #two {
-  -ms-grid-row: 5;
-  -ms-grid-column: 2;
-  grid-area: two;
-}
-
-main #three {
-  -ms-grid-row: 5;
-  -ms-grid-column: 3;
-  grid-area: three;
-}
-
-main #addition {
-  -ms-grid-row: 5;
-  -ms-grid-column: 4;
-  grid-area: plus;
-}
-
-main #zero {
-  -ms-grid-row: 6;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: zero;
-}
-
-main #dot {
-  -ms-grid-row: 6;
-  -ms-grid-column: 3;
-  grid-area: dot;
-  font-weight: 600;
-}
-
-main #equal {
-  -ms-grid-row: 6;
-  -ms-grid-column: 4;
-  grid-area: equal;
-}
-
-main .dark-gray {
-  background-color: #6fb0d9;
-  color: #323540;
-}
-
-main .gray {
-  background-color: #805555;
-  color: white;
-}
-
-main .purple {
-  background-color: #72ccbe;
-  color: #323540;
+main .number {
+  background-color: #fafafa;
 }
 /*# sourceMappingURL=style.css.map */
