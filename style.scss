@@ -6,9 +6,9 @@ main {
   height: 100vh;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1.5fr repeat(5, 1fr);
+  grid-template-rows: 30vh repeat(5, 1fr);
   grid-template-areas:
-    "display display display display"
+    "screen screen screen screen"
     "ac plus-minus percentage division"
     "seven eight nine multiplication"
     "four five six minus"
@@ -16,17 +16,16 @@ main {
     "zero zero dot equal";
   header {
     background-color: #212121;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    color: white;
-    font-size: 6rem;
     justify-content: center;
-    margin-right: 3rem;
-    grid-area: display;
-    overflow: hidden;
-    word-wrap: break-word;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
     #display {
+      text-align: right;
+      color: #fafafa;
+      font-size: 6.4rem;
+      overflow: hidden;
+      word-wrap: break-word;
     }
   }
 
