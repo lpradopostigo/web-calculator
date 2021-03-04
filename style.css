@@ -1,121 +1,118 @@
 main header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
   grid-area: screen;
 }
 
 #ac {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: ac;
 }
 
 #sign {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: plus-minus;
 }
 
 #percentage {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: percentage;
 }
 
 #division {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: division;
 }
 
 #seven {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: seven;
 }
 
 #eight {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: eight;
 }
 
 #nine {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: nine;
 }
 
 #multiplication {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 4;
   grid-area: multiplication;
 }
 
 #four {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: four;
 }
 
 #five {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: five;
 }
 
 #six {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: six;
 }
 
 #subtraction {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 4;
   grid-area: minus;
 }
 
 #one {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: one;
 }
 
 #two {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: two;
 }
 
 #three {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: three;
 }
 
 #addition {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 4;
   grid-area: plus;
 }
 
 #zero {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: zero;
 }
 
 #dot {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 3;
   grid-area: dot;
 }
 
 #equal {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 4;
   grid-area: equal;
 }
@@ -146,40 +143,65 @@ button {
 }
 
 main {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
-  gap: 10px;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: 30vh (1fr)[5];
-      grid-template-rows: 30vh repeat(5, 1fr);
-      grid-template-areas: "screen screen screen screen" "ac plus-minus percentage division" "seven eight nine multiplication" "four five six minus" "one two three plus" "zero zero dot equal";
 }
 
 main header {
   background-color: #212121;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  overflow: hidden;
+  height: 30vh;
 }
 
 main header #display {
+  width: 90%;
   text-align: right;
   color: #fafafa;
   font-size: 6.4rem;
-  overflow: hidden;
   word-wrap: break-word;
 }
 
-main .action {
+main div {
+  margin: 10px;
+  height: 70vh;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas: "ac plus-minus percentage division" "seven eight nine multiplication" "four five six minus" "one two three plus" "zero zero dot equal";
+}
+
+main div .action {
   background-color: #3d5afe;
   color: #fafafa;
 }
 
-main .number {
+main div .number {
   background-color: #fafafa;
+}
+
+main div #dot {
+  background-color: #fafafa;
+  color: #212121;
 }
 /*# sourceMappingURL=style.css.map */

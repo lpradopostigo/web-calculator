@@ -2,39 +2,52 @@
 @import "global";
 
 main {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 30vh repeat(5, 1fr);
-  grid-template-areas:
-    "screen screen screen screen"
-    "ac plus-minus percentage division"
-    "seven eight nine multiplication"
-    "four five six minus"
-    "one two three plus"
-    "zero zero dot equal";
+
   header {
     background-color: #212121;
+    display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    overflow: hidden;
+    height: 30vh;
 
     #display {
+      width: 90%;
       text-align: right;
       color: #fafafa;
       font-size: 6.4rem;
-      overflow: hidden;
       word-wrap: break-word;
     }
   }
+  div {
+    margin: 10px;
+    height: 70vh;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "ac plus-minus percentage division"
+      "seven eight nine multiplication"
+      "four five six minus"
+      "one two three plus"
+      "zero zero dot equal";
+    .action {
+      background-color: #3d5afe;
+      color: #fafafa;
+    }
 
-  .action {
-    background-color: #3d5afe;
-    color: #fafafa;
-  }
-
-  .number {
-    background-color: #fafafa;
+    .number {
+      background-color: #fafafa;
+    }
+    #dot {
+      background-color: #fafafa;
+      color: #212121;
+    }
   }
 }
