@@ -211,6 +211,11 @@ main div button:focus {
   outline: none;
 }
 
+main div button:active {
+  -webkit-animation: zoom 0.2s;
+          animation: zoom 0.2s;
+}
+
 @media (max-width: 376px) {
   html {
     font-size: 50%;
@@ -226,6 +231,28 @@ main div button:focus {
     height: 100vh;
     margin: auto;
     background-color: #fafafa;
+  }
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
   }
 }
 /*# sourceMappingURL=style.css.map */
