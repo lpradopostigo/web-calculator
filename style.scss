@@ -1,6 +1,6 @@
 @import "grid-areas";
 @import "global";
-
+@import "variables";
 main {
   display: flex;
   flex-direction: column;
@@ -11,8 +11,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
     overflow: hidden;
     height: 30vh;
 
