@@ -122,24 +122,15 @@ main header {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
   font-size: 62.5%;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-button {
-  font-size: 4.8rem;
-  border-style: solid;
-  border-color: #f5f5f5;
-  text-align: center;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 2px 4px rgba(33, 33, 33, 0.25);
-          box-shadow: 0px 2px 4px rgba(33, 33, 33, 0.25);
+h1 {
+  font-weight: 400;
 }
 
 main {
@@ -179,7 +170,7 @@ main header #display {
 }
 
 main div {
-  margin: 10px;
+  margin: 5%;
   height: 70vh;
   display: -ms-grid;
   display: grid;
@@ -203,5 +194,38 @@ main div .number {
 main div #dot {
   background-color: #fafafa;
   color: #212121;
+}
+
+main div button {
+  font-weight: 300;
+  font-size: 4.8rem;
+  border-style: solid;
+  border-color: #f5f5f5;
+  text-align: center;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 2px 4px rgba(33, 33, 33, 0.25);
+          box-shadow: 0px 2px 4px rgba(33, 33, 33, 0.25);
+}
+
+main div button:focus {
+  outline: none;
+}
+
+@media (max-width: 376px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (min-width: 426px) {
+  body {
+    background-color: #ff8257;
+  }
+  body main {
+    width: 40rem;
+    height: 100vh;
+    margin: auto;
+    background-color: #fafafa;
+  }
 }
 /*# sourceMappingURL=style.css.map */
